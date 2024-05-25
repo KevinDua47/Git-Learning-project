@@ -1,0 +1,29 @@
+git status
+git log // to get all commits
+git init -b <branchName> // to initialize a local git repository with a given branchName
+git add <filename> // this commands add the file from working directory to staged directory (a port between where all files are stored which need to be committed in future)
+git commit -m "message" // this command commits the file in staged area with a given message
+git commit -a -m "message" // to both add and commit the file to git repository
+git branch // shows all branches of git and mentions current branch with different color
+git switch <branchName> // this command switches to given branch
+git switch -c <branchName> // this command creates and switches to new branch
+git checkout <branchName> // this command switches to given branch
+git checkout -b <branchName> // this command creates and switches to new branch
+git branch -d <branchName> // this command deletes the given branch
+git merge <branchName> // this command merges the given branch with current branch
+git diff // this commands tells the difference between last commit and current changes in working directory (these new changes are not staged yet)
+git diff --staged // this commands tells the difference between last commit and current changes in staged directory 
+git rm <fileName>
+git rm --cached <fileName>
+git tag // tells us all the tags attached so far
+git tag -a <tagName> -m "message" // sets a tag to the commit, also -a refers to "annotated" here
+// tags are not pushed along with usual commit (push) to the remote repository, they are pushed with a separate command
+git push origin <tagName> // command to push a commited tagName
+
+// to work with remote repository (GitHub)
+ssh-keygen -o // this command creates a .ssh directory in home directory with files in it and inside id_rsa.pub file we have the generated key, this key is unique for every desktop and needs to be created just once
+git remote add origin git@github.com:KevinDua47/Git-Learning-project.git // to tell the address of remote git repository to local repository
+
+
+// steps to work with remote repository.
+first we create a local git repository along with a README.md file, then we go to GitHub. There, we create a new repository, also a new ssh (if not already made). Then we use ssh-keygen command to create a key which we copy and paste in ssh key section in GitHub. After that we use "git remote add origin git@github.com:KevinDua47/Git-Learning-project.git" command to acknoweldge remote repository with its address from GitHub. Later, "git push -u origin <branchName>" to push our first commit to the remote repository.
